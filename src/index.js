@@ -1,10 +1,19 @@
 import ReactDOM from "react-dom"
 import React from "react"
+import { createStore } from "redux"
+import App from "./App.js"
+import { Provider } from "react-redux"
 
-class App extends React.Component {
-  render() {
-    return <h1>Hello, World!</h1>
-  }
+const defaultState = { appName: "LARGE", articles: null }
+
+const reducer = function(state = defaultState, action) {
+  return state
 }
+const store = createStore(reducer)
 
-ReactDOM.render(<App />, document.getElementById("root"))
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
+)

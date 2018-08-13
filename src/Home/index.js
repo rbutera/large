@@ -8,11 +8,12 @@ const Promise = global.Promise
 
 const mapStateToProps = state => ({ appName: state.appName })
 const mapDispatchToProps = dispatch => ({
-  onLoad: payload => dispatch({ type: "HOME_PAGE_LOADED" }, payload)
+  onLoad: payload => dispatch({ type: "HOME_PAGE_LOADED", payload })
 })
 
 class Home extends Component {
   componentWillMount() {
+    console.log("Home component mounted")
     this.props.onLoad(agent.Articles.all())
   }
   render() {

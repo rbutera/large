@@ -8,7 +8,10 @@ const API_ROOT = "https://conduit.productionready.io/api"
 const responseBody = res => res.body
 
 const requests = {
-  get: url => superagent.get(`${API_ROOT}${url}`).then(responseBody)
+  get: url => {
+    console.log(`retrieving ${API_ROOT}${url}`)
+    return superagent.get(`${API_ROOT}${url}`).then(responseBody)
+  }
 }
 
 const Articles = {

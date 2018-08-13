@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import Banner from "./Banner"
 import MainView from "./MainView"
-import agent from "../agent"
+import agent from "../../agent"
 import { connect } from "react-redux"
 
 const Promise = global.Promise
